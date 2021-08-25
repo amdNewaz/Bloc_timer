@@ -1,3 +1,7 @@
+
+![flutter_timer](https://user-images.githubusercontent.com/77064568/130818685-ea7c89d1-9d73-4c6a-a4bc-786fdf9e031f.gif)
+
+
 Key Topics
 Observe state changes with BlocObserver.
 BlocProvider, Flutter widget which provides a bloc to its children.
