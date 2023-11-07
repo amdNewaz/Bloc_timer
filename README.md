@@ -2,42 +2,47 @@
 ![flutter_timer](https://user-images.githubusercontent.com/77064568/130818685-ea7c89d1-9d73-4c6a-a4bc-786fdf9e031f.gif)
 
 
-Key Topics
-Observe state changes with BlocObserver.
-BlocProvider, Flutter widget which provides a bloc to its children.
-BlocBuilder, Flutter widget that handles building the widget in response to new states.
-Prevent unnecessary rebuilds with Equatable.
-Learn to use StreamSubscription in a Bloc.
-Prevent unnecessary rebuilds with buildWhen.
+In the ever-evolving world of mobile app development, speed, efficiency, and clean architecture are key. I recently ventured into creating a Flutter Timer app that not only excels in precision but also follows a clean and efficient architecture. This journey was a testament to why I chose Bloc for this project.
 
-Timer Bloc
-TimerState
-We’ll start off by defining the TimerStates which our TimerBloc can be in.
+The Flutter Timer App
+My goal was to develop a Flutter Timer app that not only delivered accurate timing but also followed the principles of clean architecture. Here's a brief overview of the app:
 
-Our TimerBloc state can be one of the following:
+1. Precise Timer
+The Flutter Timer app is all about accuracy. Whether it's tracking your workout, measuring cooking time, or simply timing your activities, it offers precision down to the millisecond.
 
-TimerInitial — ready to start counting down from the specified duration.
-TimerRunInProgress — actively counting down from the specified duration.
-TimerRunPause — paused at some remaining duration.
-TimerRunComplete — completed with a remaining duration of 0.
-Each of these states will have an implication on the user interface and actions that the user can perform. For example:
+2. Clean Architecture
+Clean architecture is at the heart of this project. It ensures that the app is organized, maintainable, and ready for future expansion. The separation of concerns and a clear structure make it easier to manage and enhance.
 
-if the state is TimerInitial the user will be able to start the timer.
-if the state is TimerRunInProgress the user will be able to pause and reset the timer as well as see the remaining duration.
-if the state is TimerRunPause the user will be able to resume the timer and reset the timer.
-if the state is TimerRunComplete the user will be able to reset the timer.
-In order to keep all of our bloc files together, let’s create a bloc directory with bloc/timer_state.dart.
+3. Speed and Efficiency
+Efficiency was a top priority. The Flutter Timer app is responsive and fast, ensuring that timing is precise and that users have a seamless experience.
 
-Note that all of the TimerStates extend the abstract base class TimerState which has a duration property. This is because no matter what state our TimerBloc is in, we want to know how much time is remaining. Additionally, TimerState extends Equatable to optimize our code by ensuring that our app does not trigger rebuilds if the same state occurs.
+Why Bloc for the Flutter Timer App?
+The choice of Bloc for this project was clear for several reasons:
 
-Next up, let’s define and implement the TimerEvents which our TimerBloc will be processing.
+1. Efficient State Management
+Bloc, short for Business Logic Component, is a robust architecture for managing the app's state. It efficiently manages user interactions, ensuring that the app remains responsive and predictable.
 
-TimerEvent
-Our TimerBloc will need to know how to process the following events:
+2. Separation of Concerns
+Clean architecture and Bloc go hand in hand. Bloc allows the clean separation of concerns, with dedicated components for Business Logic, Events, and States. This separation ensures a clear and organized codebase.
 
-TimerStarted — informs the TimerBloc that the timer should be started.
-TimerPaused — informs the TimerBloc that the timer should be paused.
-TimerResumed — informs the TimerBloc that the timer should be resumed.
-TimerReset — informs the TimerBloc that the timer should be reset to the original state.
-TimerTicked — informs the TimerBloc that a tick has occurred and that it needs to update its state accordingly.
-If you didn’t use the IntelliJ or VSCode extensions, then create bloc/timer_event.dart and let’s implement those events.
+3. Streamlined Code
+Bloc simplifies the codebase, making it more maintainable. With Bloc, I could focus on the app's core functionality and ensure that it was executed with precision.
+
+The Implementation
+Implementing the Flutter Timer app with Bloc and clean architecture was a journey of precision and efficiency. Here are the key aspects of the implementation:
+
+1. Bloc in Action
+Bloc was the driving force behind the app's responsiveness. It handled state changes, ensuring that the app responded swiftly to user interactions. Whether it was starting, pausing, or resetting the timer, Bloc made it smooth and predictable.
+
+2. Clean Architecture Principles
+Clean architecture principles guided the development process. The separation of concerns into layers such as data, domain, and presentation ensured that the codebase remained organized and scalable.
+
+3. Precise Timing
+The core feature of the Flutter Timer app was precise timing. With the help of Bloc, I could manage the timer's state and update it with precision, down to the millisecond. This level of accuracy was crucial for users relying on the app for their timing needs.
+
+Conclusion
+The Flutter Timer app, developed with Bloc and clean architecture, is a testament to the power of precise timing and efficient state management. It showcases how choosing the right architecture can result in a responsive, organized, and maintainable app.
+
+The selection of Bloc as the architecture of choice for this project was instrumental in achieving the desired speed and efficiency. It allowed for the separation of concerns, streamlined code, and a seamless user experience. The Flutter Timer app is a prime example of how clean architecture and Bloc can come together to create an exceptional app.
+
+Stay tuned for more updates and future projects that explore the capabilities of Flutter and other cutting-edge technologies!
